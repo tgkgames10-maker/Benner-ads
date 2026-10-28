@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TGK LIVE x PAMMU NES - Ticker Banner</title>
+<style>
+:root{--bg:transparent;--purple:#a855f7;--pink:#ff3da8;--cyan:#36e8ff;--gold:#ffe66d;--white:#f8f7ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:system-ui, -apple-system, sans-serif;overflow:hidden}
+
+/* Ticker Wrapper Banner */
+.ticker-container{
+  width:100%;
+  background:linear-gradient(90deg, #111025, #17112b 50%, #111025);
+  border-top:2px solid var(--purple);
+  border-bottom:2px solid var(--cyan);
+  box-shadow:0 0 20px rgba(168, 85, 247, 0.4);
+  padding:10px 0;
+  white-space:nowrap;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Gradient Fade Edges */
+.ticker-container::before, .ticker-container::after{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  width:50px;
+  z-index:3;
+  pointer-events:none;
+}
+.ticker-container::before{left:0; background:linear-gradient(to right, #080713, transparent);}
+.ticker-container::after{right:0; background:linear-gradient(to left, #080713, transparent);}
+
+/* Moving Track */
+.ticker-track{
+  display:inline-block;
+  animation: scrollTicker 22s linear infinite;
+}
+
+.ticker-track:hover{
+  animation-play-state: paused;
+}
+
+/* Ticker Items */
+.ticker-item{
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+  margin-right:40px;
+  color:var(--white);
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.ticker-item span.gold{color:var(--gold)}
+.ticker-item span.pink{color:var(--pink); text-shadow:0 0 8px var(--pink)}
+.ticker-item span.cyan{color:var(--cyan); text-shadow:0 0 8px var(--cyan)}
+.separator{color:var(--purple); margin-left:10px; font-weight:bold;}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+</head>
+<body>
+
+<div class="ticker-container">
+  <div class="ticker-track">
+    <!-- First Set -->
+    <a href="https://www.youtube.com/@TGKLIVE" target="_blank" class="ticker-item">
+      <span>⚔️</span> <span class="cyan">TGK LIVE</span> — Hardcore Retro Gaming & Boss Fights <span class="separator">◆</span>
+    </a>
+    <a href="https://www.youtube.com/@pammu_nes" target="_blank" class="ticker-item">
+      <span>🕹️</span> <span class="gold">PAMMU NES</span> — Classic NES Nostalgia & Adventures <span class="separator">◆</span>
+    </a>
+    <div class="ticker-item">
+      <span class="pink">TWO CHANNELS</span> • ONE RETRO PASSION <span class="separator">◆</span>
+    </div>
+    <div class="ticker-item">
+      <span>🚀</span> SUBSCRIBE • PLAY • REPEAT <span class="separator">◆</span>
+    </div>
+
+    <!-- Duplicate Set for Seamless Infinite Loop -->
+    <a href="https://www.youtube.com/@TGKLIVE" target="_blank" class="ticker-item">
+      <span>⚔️</span> <span class="cyan">TGK LIVE</span> — Hardcore Retro Gaming & Boss Fights <span class="separator">◆</span>
+    </a>
+    <a href="https://www.youtube.com/@pammu_nes" target="_blank" class="ticker-item">
+      <span>🕹️</span> <span class="gold">PAMMU NES</span> — Classic NES Nostalgia & Adventures <span class="separator">◆</span>
+    </a>
+    <div class="ticker-item">
+      <span class="pink">TWO CHANNELS</span> • ONE RETRO PASSION <span class="separator">◆</span>
+    </div>
+    <div class="ticker-item">
+      <span>🚀</span> SUBSCRIBE • PLAY • REPEAT <span class="separator">◆</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
